@@ -1,0 +1,73 @@
+html {
+  background-color: #151515;
+  margin: 0;
+}
+
+#container-login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+//#container-login::before {
+//  content: '';
+//  position: absolute;
+//  top: -200px;
+//  left: -200px;
+//  width: 400px;
+//  height: 400px;
+//  background: radial-gradient(
+//      circle,
+//      rgba(138, 43, 226, 0.4) 0%,
+//      rgba(0, 0, 0, 0) 70%
+//  );
+//  border-radius: 50%;
+//  z-index: 0;
+//  filter: blur(80px);
+//}
+
+.container-form {
+  position: relative;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.31);
+  z-index: 1;
+  overflow: hidden;
+
+  &.desktop {
+    width: 500px;
+    height: 600px;
+  }
+
+  &.mobile {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+.container-form::before,
+.container-form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container-form::before {
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #1a1a1a, #1a1a1a) padding-box,
+  linear-gradient(135deg, rgb(26, 26, 26), rgb(26, 26, 26)) border-box;
+}
+
+.container-form::after {
+  filter: blur(20px);
+}
